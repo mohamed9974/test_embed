@@ -5,6 +5,7 @@
 void initADC(){
     TRISAbits.RA0 = 1;
     ADCON1bits.PCFG = 0b1110;
+    ADCON1bits.VCFG = 0b00;
     
     ADCON0bits.CHS = 0 ;
     
@@ -12,6 +13,7 @@ void initADC(){
     ADCON2bits.ACQT = 2 ;
     ADCON2bits.ADCS = 6 ;
    
+    IPR1bits.ADIP = 1;
     PIE1bits.ADIE = 1;
     ADCON0bits.ADON = 1 ;
 }

@@ -12,7 +12,7 @@
 #include "sevenSeg.h"
 int result=0;
 
-void __interrupt() ISR(){
+void __interrupt(high_priority) high_isr(){
     if (ADIF){
         result = readADChannel();
         ADIF = 0;
@@ -20,8 +20,9 @@ void __interrupt() ISR(){
 
 }
 
-
-
+void __interrupt(low_priority) low_isr(){
+ 
+}
 /*
  * 
  */
@@ -31,7 +32,7 @@ int main(int argc, char** argv) {
     
     INTCONbits.PEIE = 1;
     INTCONbits.GIE = 1;
-    
+    RCONbits.IPEN = 1;
     
     
     while(1){
