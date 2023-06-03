@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   buttons.h
  * Author: ceng33620232
  *
@@ -6,18 +6,16 @@
  */
 
 #ifndef BUTTONS_H
-#define	BUTTONS_H
+#define BUTTONS_H
 
-#ifdef	__cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
+void initButtons(void);
 
-
-
-#ifdef	__cplusplus
+#ifdef __cplusplus
 }
 #endif
 
-#endif	/* BUTTONS_H */
-
+#endif /* BUTTONS_H */

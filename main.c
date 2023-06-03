@@ -31,6 +31,29 @@ void __interrupt() ISR() {
 
     INTCONbits.TMR0IF = 0; // Clear the Timer0 interrupt flag
   }
+  if (INTCONbits.RBIF) {
+    // PORTB change interrupt has occurred
+
+    if (!PORTBbits.RB0) {
+      // START/STOP button has been pressed
+
+      // Add your code here
+    } else if (!PORTBbits.RB1) {
+      // RESET button has been pressed
+
+      // Add your code here
+    } else if (!PORTBbits.RB2) {
+      // INCREASE button has been pressed
+
+      // Add your code here
+    } else if (!PORTBbits.RB3) {
+      // DECREASE button has been pressed
+
+      // Add your code here
+    }
+
+    INTCONbits.RBIF = 0; // Clear the PORTB change interrupt flag
+  }
 }
 
 /*
