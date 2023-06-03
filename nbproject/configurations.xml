@@ -7,6 +7,7 @@
       <itemPath>adc.h</itemPath>
       <itemPath>sevenSeg.h</itemPath>
       <itemPath>timer.h</itemPath>
+      <itemPath>buttons.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,6 +20,7 @@
       <itemPath>adc.c</itemPath>
       <itemPath>sevenSeg.c</itemPath>
       <itemPath>timer.c</itemPath>
+      <itemPath>buttons.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
