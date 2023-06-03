@@ -14,7 +14,9 @@ int result=0;
 
 void __interrupt(high_priority) high_isr(){
     if (ADIF){
-        result = readADChannel();
+//        startADCConversion();  // Start the ADC conversion
+        while(!isADCConversionComplete());  // Wait for the conversion to complete
+        result = readADCResult(); 
         ADIF = 0;
     }
 
@@ -37,8 +39,8 @@ int main(int argc, char** argv) {
     
     while(1){        
         startADCConversion();  // Start the ADC conversion
-        while(!isADCConversionComplete());  // Wait for the conversion to complete
-        result = readADCResult();  // Read the result
+//        while(!isADCConversionComplete());  // Wait for the conversion to complete
+//        result = readADCResult();  // Read the result
         // Here you can do something with result, such as print it out
         updateDisplay(result);
     }

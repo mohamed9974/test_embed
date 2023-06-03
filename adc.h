@@ -14,7 +14,10 @@ extern "C" {
     
     
 void initADC();
-int readADChannel(); 
+int readADCResult();
+int isADCConversionComplete();
+void startADCConversion();
+
 
 #ifdef	__cplusplus
 }
