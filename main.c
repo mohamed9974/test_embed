@@ -35,7 +35,11 @@ int main(int argc, char** argv) {
     RCONbits.IPEN = 1;
     
     
-    while(1){
+    while(1){        
+        startADCConversion();  // Start the ADC conversion
+        while(!isADCConversionComplete());  // Wait for the conversion to complete
+        result = readADCResult();  // Read the result
+        // Here you can do something with result, such as print it out
         updateDisplay(result);
     }
     return (EXIT_SUCCESS);
