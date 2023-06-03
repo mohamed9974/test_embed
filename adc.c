@@ -10,7 +10,6 @@ void initADC(){
     ADCON2bits.ADFM = 1;
     ADCON2bits.ACQT = 2;
     ADCON2bits.ADCS = 6;
-//    IPR1bits.ADIP = 1; 
     ADIE = 1;
     ADIF = 0;
 }
