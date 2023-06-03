@@ -11,6 +11,9 @@
 #include <stdlib.h>
 #include <xc.h>
 int result = 0;
+int currentSpeed = 0;
+typedef unsigned char byte;
+byte buttonState, buttonPrevState, buttonClicks;
 
 void __interrupt() ISR() {
   if (ADIF) {
@@ -33,7 +36,10 @@ void __interrupt() ISR() {
   }
   if (INTCONbits.RBIF) {
     // PORTB change interrupt has occurred
-
+      buttonState = PORTB;
+      buttonClicks = buttonState ^ buttonPrevState;
+      buttonClicks = buttonClicks & buttonClicks;
+      
     if (!PORTBbits.RB0) {
       // START/STOP button has been pressed
 
